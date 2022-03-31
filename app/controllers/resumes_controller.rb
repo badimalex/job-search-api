@@ -1,13 +1,13 @@
 class ResumesController < ApplicationController
   def index
     @resumes = Resume.all
-    if params[:level]
+    if params[:level].present?
       @resumes = @resumes.where("lower(level) like ?", "%#{params[:level].downcase}%")
     end
-    if params[:experience]
+    if params[:experience].present?
       @resumes = @resumes.where("experience > ?", params[:experience])
     end
-    if params[:tags]
+    if params[:tags].present?
       params[:tags].each do |tag|
         @resumes = @resumes.where("lower(tags) like ?", "%#{tag.downcase}%")
       end

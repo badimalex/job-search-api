@@ -6,6 +6,7 @@
     avatar: Faker::LoremFlickr.image(search_terms: ['job', 'it', 'recruiter']),
     rating: Faker::Number.decimal(l_digits: 2),
     level: ['Middle','Senior','Junior'].sample,
+    skills: ['PHP','React','Html','Css','Redux','Typescript','Ruby','Ruby on Rails','Mysql','Unix'].sample(3),
     is_salary: Faker::Boolean.boolean,
     currency: ['USD', 'EUR', 'RUB'].sample,
     activity: [

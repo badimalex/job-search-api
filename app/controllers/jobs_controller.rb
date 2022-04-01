@@ -12,6 +12,11 @@ class JobsController < ApplicationController
         @jobs = @jobs.where("lower(activity) like ?", "%#{activity.downcase}%")
       end
     end
+    if params[:skills].present?
+      params[:skills].each do |skill|
+        @jobs = @jobs.where("lower(skills) like ?", "%#{skill.downcase}%")
+      end
+    end
     if params[:level].present?
       @jobs = @jobs.where("lower(level) like ?", "%#{params[:level].downcase}%")
     end

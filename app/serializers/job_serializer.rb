@@ -1,7 +1,8 @@
 class JobSerializer < ActiveModel::Serializer
-  attributes :id, :title, :salary, :company, :avatar, :rating, :skills, :created_at
+  attributes :id, :title, :level, :salary, :company,
+    :avatar, :rating, :activity, :created_at, :is_salary, :currency
 
-  def skills
-    JSON.parse object.skills
+  def activity
+    JSON.parse object.activity
   end
 end

@@ -5,7 +5,20 @@
     company: Faker::Company.name,
     avatar: Faker::LoremFlickr.image(search_terms: ['job', 'it', 'recruiter']),
     rating: Faker::Number.decimal(l_digits: 2),
-    skills: ['PHP','React','Html','Css','Redux','Typescript','Ruby','Mysql','Unix'].sample(5)
+    level: ['Middle','Senior','Junior'].sample,
+    is_salary: Faker::Boolean.boolean,
+    currency: ['USD', 'EUR', 'RUB'].sample,
+    activity: [
+      'Backend',
+      'Frontend',
+      'Applications',
+      'Testing',
+      'Administration',
+      'Design',
+      'Management',
+      'Marketing',
+      'Analytics'
+    ].sample(5)
   )
 end
 

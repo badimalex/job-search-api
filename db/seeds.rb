@@ -27,7 +27,7 @@ end
   Resume.create!(
     name: Faker::Name.name,
     level: ['Middle','Senior','Junior'].sample,
-    avatar: Faker::Avatar.image,
+    avatar: Faker::LoremFlickr.image(search_terms: ['job', 'it', 'recruiter']),
     is_search_job: Faker::Boolean.boolean,
     tags: ['PHP','React','Html','Css','Redux','Typescript','Ruby','Mysql','Unix'].sample(4),
     experience: [1,2,3,4,5,6,7].sample,

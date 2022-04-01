@@ -5,4 +5,8 @@ class JobSerializer < ActiveModel::Serializer
   def activity
     JSON.parse object.activity
   end
+
+  def skills
+    JSON.parse object.skills
+  end
 end

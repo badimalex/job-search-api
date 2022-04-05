@@ -13,8 +13,8 @@ class ResumesController < ApplicationController
       end
     end
     render json: {
-      data: @resumes.page(params[:page]).per(params[:per]),
-      total: @resumes.count
-    }
+        list: ActiveModelSerializers::SerializableResource.new(@resumes.page(params[:page]).per(params[:per]), each_serializer: ResumeSerializer),
+        total: @resumes.count
+      }
   end
 end

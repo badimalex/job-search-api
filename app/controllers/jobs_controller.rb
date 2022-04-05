@@ -26,9 +26,10 @@ class JobsController < ApplicationController
     if params[:currency].present?
       @jobs = @jobs.where(currency: params[:currency])
     end
+
     render json: {
-      data: @jobs.page(params[:page]).per(params[:per]),
-      total: @jobs.count
-    }
+        list: ActiveModelSerializers::SerializableResource.new(@jobs.page(params[:page]).per(params[:per]), each_serializer: JobSerializer),
+        total: @jobs.count
+      }
   end
 end

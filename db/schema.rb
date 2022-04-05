@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_01_072534) do
     t.boolean "is_salary", default: false
     t.string "currency"
     t.string "level"
+    t.string "skills"
   end
 
   create_table "resumes", force: :cascade do |t|

@@ -9,6 +9,7 @@
     skills: ['PHP','React','Html','Css','Redux','Typescript','Ruby','Ruby on Rails','Mysql','Unix'].sample(3),
     is_salary: Faker::Boolean.boolean,
     currency: ['USD', 'EUR', 'RUB'].sample,
+    created_at: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
     activity: [
       'Backend',
       'Frontend',
@@ -32,6 +33,7 @@ end
     tags: ['PHP','React','Html','Css','Redux','Typescript','Ruby','Mysql','Unix'].sample(4),
     experience: [1,2,3,4,5,6,7].sample,
     city: Faker::Address.city,
-    country: Faker::Address.country
+    country: Faker::Address.country,
+    created_at: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
   )
 end

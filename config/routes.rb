@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   resources :resumes
   resources :jobs
+  resources :graphs
 end

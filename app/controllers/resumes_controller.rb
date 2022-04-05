@@ -12,6 +12,9 @@ class ResumesController < ApplicationController
         @resumes = @resumes.where("lower(tags) like ?", "%#{tag.downcase}%")
       end
     end
-    render json: @resumes.page(params[:page]).per(params[:per])
+    render json: {
+      data: @resumes.page(params[:page]).per(params[:per]),
+      total: @resumes.count
+    }
   end
 end

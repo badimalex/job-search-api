@@ -26,6 +26,9 @@ class JobsController < ApplicationController
     if params[:currency].present?
       @jobs = @jobs.where(currency: params[:currency])
     end
-    render json: @jobs.page(params[:page]).per(params[:per])
+    render json: {
+      data: @jobs.page(params[:page]).per(params[:per]),
+      total: @jobs.count
+    }
   end
 end
